@@ -27,7 +27,7 @@ const addTodoList = (e) => {
   if (todoListValue != "" && !localTodoLists.includes(todoListValue)) {
     localTodoLists.push(todoListValue);
     localTodoLists = [...new Set(localTodoLists)];
-    console.log(localTodoLists);
+    // console.log(localTodoLists);
     localStorage.setItem("todoList", JSON.stringify(localTodoLists));
 
     //! const divElement = document.createElement("div");
@@ -52,7 +52,7 @@ const removeTodoElem = (e) => {
   const todoToRemove = e.target;
   let todoListContent = todoToRemove.previousElementSibling.innerText;
   let parentElem = todoToRemove.parentElement;
-  console.log(todoListContent);
+//   console.log(todoListContent);
 
   localTodoLists = localTodoLists.filter((curTodo) => {
     return curTodo != todoListContent.toLowerCase();
@@ -60,7 +60,7 @@ const removeTodoElem = (e) => {
 
   addTodoListFromLocalStorage(localTodoLists);
   parentElem.remove();
-  console.log(localTodoLists);
+//   console.log(localTodoLists);
 };
 
 mainTodoElem.addEventListener("click", (e) => {
